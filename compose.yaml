@@ -1,9 +1,16 @@
 services:
-  postgres:
-    image: 'postgres:latest'
+  db:
+    image: postgres:latest
+    container_name: movia-postgres
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: cinematch_db
     ports:
-      - '5432'
+      - "5432:5432"
+    volumes:
+      # Sadece burayı değiştirdik: /data kısmını sildik
+      - cinematch_vol:/var/lib/postgresql
+
+volumes:
+  cinematch_vol:
