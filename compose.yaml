@@ -9,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      # Sadece burayı değiştirdik: /data kısmını sildik
+      
       - cinematch_vol:/var/lib/postgresql
 
 volumes:

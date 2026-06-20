@@ -1,12 +1,18 @@
 package com.raspel.movia.service;
 
-import java.util.List;
-
 import com.raspel.movia.dto.MovieDto;
 
+import java.util.List;
+
 public interface MovieService {
-    MovieDto createMovie (MovieDto movieDto);;
+
+    MovieDto createMovie(MovieDto movieDto);
+
     List<MovieDto> getAllMovies();
+
     MovieDto getMovieById(Long id);
-    void deleteMovieById(Long id);
+
+    MovieDto updateMovie(Long id, MovieDto movieDto);
+
+    void deleteMovie(Long id);
 }
